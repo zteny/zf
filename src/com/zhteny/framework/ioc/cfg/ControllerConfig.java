@@ -22,4 +22,13 @@ public class ControllerConfig {
 		}
 	}
 	
+	public String getName(){
+		return name;
+	}
+	public String getMethod(){
+		return method;
+	}
+	public String getClassName(){
+		return className;
+	}
 }

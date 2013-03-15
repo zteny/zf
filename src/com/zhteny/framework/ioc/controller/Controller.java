@@ -9,5 +9,12 @@ public class Controller {
 	public static void main(String[] args) {
 
 	}
-
+	
+	public ControllerProxy newControllerProxy(){
+		return null;
+	}
+	
+	public ControllerConfig getControllerConfig(){
+		return ctlConfig;
+	}
 }

@@ -38,9 +38,8 @@ public class Container {
 	}
 	
 	public ControllerProxy controllerService(HttpServletRequest request, HttpServletResponse response){
-		Controller
+//		Controller
 		ControllerContext context = ControllerContext.getInstance().init(request,response);
-		
 		
 		return null;
 	}
@@ -49,4 +48,5 @@ public class Container {
 		cfg.getController(uri);
 		return null;
 	}
+	
 }
