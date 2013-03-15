@@ -23,5 +23,7 @@ public class PackageConfig {
 			);
 		}
 	}
-
+	public ControllerConfig getControllerConfig(String name){
+		return ctlCfg.get(name);
+	}
 }

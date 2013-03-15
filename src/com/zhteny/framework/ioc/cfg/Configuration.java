@@ -15,8 +15,17 @@ import org.dom4j.io.SAXReader;
 public class Configuration {
 	private static Map<String, PackageConfig> pkgConfig;
 	private static Map<String, ControllerConfig> ctlConfig;
+	private static Configuration cfg;
 	
 	private Configuration(){}
+	
+	public static Configuration getInstance(){
+		if(cfg == null){
+			cfg = new Configuration();
+			cfg.init();
+		}
+		return cfg;
+	}
 	
 	// 先加载 controller.xml 再找到其下的一些xml文件，再把全部相关XML文件的package、controller加载进来
 	public void init(){ 
@@ -54,8 +63,23 @@ public class Configuration {
 		return pkgConfig;
 	}
 	
-	private Map<String, PackageConfig> getPackageConfig(){
+	public Map<String, PackageConfig> getPackageConfig(){
 		return this.pkgConfig;
 	}
+
+	public ControllerConfig getController(String uri) {
+		int pos = uri.lastIndexOf("/");
+		
+		String namespace = uri.substring(0,uri.lastIndexOf("/"));
+		String controller = uri.substring(pos+1);
+		
+		System.out.println(namespace + "\t" + controller);
+
+		PackageConfig pkg = pkgConfig.get(namespace);
+		return pkg.getControllerConfig(controller);
+	}
 	
+	public static void main(String args[]){
+		getInstance().getController("/testAction");
+	}
 }

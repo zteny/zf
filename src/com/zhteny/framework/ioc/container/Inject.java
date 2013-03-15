@@ -1,4 +1,4 @@
-package com.zhteny.framework.ioc;
+package com.zhteny.framework.ioc.container;
 
 public class Inject {
 

@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zhteny.framework.ioc.cfg.Configuration;
+
 public class Lanuch extends HttpServlet implements Filter {
-	
+	private Configuration cfg;
 
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain arg2) throws IOException, ServletException {
@@ -27,6 +29,8 @@ public class Lanuch extends HttpServlet implements Filter {
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
 		// init container, init configuration
+		cfg = Configuration.getInstance();
+		
 	}
 
 }
