@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>About Me</title>
+
+<!-- <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script> 
+<link href="plugin/bootstrap/css/bootstrap.min.css" ref="stylesheet">  -->
+
+<script src="plugin/jquery/jquery-1.9.0.js"></script>
+<script src="plugin/jquery/jquery-ui-1.10.1.custom.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resource/css/basecss.css">
+
+<script type="text/javascript">
+	
+	$(function(){
+		$('table').hide();
+		$('#mainTable').show('drop');
+		$('#aboutMe li').click(function(){
+			var me = $(this);
+			if(me.hasClass('black')){
+				me.removeClass("black");
+				me.children('img').attr('src','resource/image/expand32.png');
+				me.next().slideUp("slow");
+			}else{
+				me.addClass("black");
+				me.children('img').attr('src','resource/image/collapse32.png');
+				me.next().slideDown("slow");
+			}
+		});
+		
+		$('#last img').click(function(){
+			if($('.insert').length == 0){
+				$('#topBar img').show();
+				$('body').css('cursor','wait');
+				$.ajax({
+					url:'NewFile.html',
+					context:document.body
+				}).done(function(data){
+					$('#topBar img').hide();
+					$('body').css('cursor','auto');
+					$('#mainTable').hide('drop','slow');
+					$('#mainPanel').prepend(data);
+					$('.insert').show('drop','slow');
+				}); 
+			}else{
+				$('#mainTable').hide('drop','slow');
+				$('.insert').show('drop','slow');
+			}
+		});
+		
+		$('.backUp').click(function(){
+			 $('body,html').animate({scrollTop:0},1000);
+            return false;
+		});
+	});
+</script>
+
+</head>
+<body>
+<div id="topBar" class="blue transparent" style="position:fixed;top:0px:left:0px;height:45px;width:100%;z-index:1">
+	<img src="resource/image/preloader-w8-cycle-black.gif" width="45px" style="margin:0px 0px 0px 10px;display:none ">
+</div>
+<div style="height:50px"></div>
+<div class="backUp"></div>
+<center id="mainPanel">
+<table id='mainTable'>
+	<tr>
+		<th align="left" valign="top" height="650px">
+			<div style="background-image:url('resource/image/AboutMe.png');position:relative;top:0px;left:-10px;width:140px;height:60px;z-index:1;">
+				<span style="font-size:26px;color:#FFF;">About Me</span>
+			</div>
+			<div id="mainDiv" class="shadow" style="background:#FFF;position:relative;top:-47px;width:650px;height:100%">
+				<div style="border-bottom:#0060bf 1px solid;position:relative;left:10px;top:50px;width:630px;height:200px">
+					<div style="position:relative;top:15px;left:30px"><img src="resource/image/me.jpg" width="160"/></div>
+					<div style="position:relative;top:-150px;left:200px;height:160px;width:400px">
+						<center>
+							<span class='head_1'>庄浩潮</span></p>
+							<span class='text'>软件技术</span></br>
+							<span class='head_2'>广东科贸职业学院</span></p>
+							<span class="head_3">Email：zteny@qq.com</span></br>
+							<span class="head_3">TEL：13650837103 &nbsp;&nbsp;&nbsp;&nbsp; <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=120971090&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:120971090:45" alt="点击这里给我发消息" title="点击这里给我发消息"></a>：120971090</span>
+						</center>
+					</div> 
+				</div>
+				<div style="position:relative;width:600px;top:50px;left:0px">
+					<ul class='' id="aboutMe">
+						<li class="gray black pointer">
+							<img src="resource/image/collapse32.png" style="float:left;padding:8px 15px"/>
+							<p class="head_2" style="color:#FFF;padding:7px">关 于 我  <span class="text">SSH、SSI、Oracle、Tomcat</span></p>
+						</li>
+							<div class="text textDiv" style='display:block'>
+								<p>		熟悉Tomcat及Jetty</p>
+								<p>		熟悉Oracle、MySQL数据库</p>
+								<p>		有很强的学能力，和接受能力。</p>
+								<p>		深入了解Struts2源码及设计思想、设计模式</p>
+								<p>		熟悉Javascript，及其流行类库jQuery、ExtJs</p>
+								<p>		熟练运用多个框架(Struts2、 Srping、 Hibernate、 iBatis、 Freemarker)</p>
+								<p>		熟悉多种开源组件(Apache commons、 Apache POI、 Lucene、 EnCache、 OSCache、 CGLib、 Spring Quartz)</p>
+							</div>						
+						<li class="gray pointer">
+							<img src="resource/image/expand32.png" style="float:left;padding:8px 15px"/>
+							<p class="head_2" style="color:#FFF;padding:7px">我的专长  <span class="text">I can do this!</span></p>
+						</li>
+							<div class="text textDiv">
+								<p>Java SE >> Java EE >> SSH >> SQL</p>
+							</div>
+						<li class="gray pointer">
+							<img src="resource/image/expand32.png" style="float:left;padding:8px 15px"/>
+							<p class="head_2" style="color:#FFF;padding:7px">座 右 铭  <span class="text">I think!</span></p>
+						</li>
+							<div class="text textDiv">
+								<p></>I'm looking for work!</p>
+							</div>
+						<li class="gray pointer">
+							<img src="resource/image/expand32.png" style="float:left;padding:8px 15px"/>
+							<p class="head_2" style="color:#FFF;padding:7px">工作经历  <span class="text">Over one year!</span></p>
+						</li>
+						<div id='last' class='text textDiv'>
+							<div style="float:right;top:30px;right:30px;padding:70px 50px">
+								<img src="resource/image/arrows-right-black.png" style="cursor:pointer"/>
+							</div>
+							<p class='head_3'>参与开发的企业项目：</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;1.佛山教育资料库子系统</p>
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;2.佛山教育优课网子系统</p>
+							<p class='head_3'>参与老师带领课题项目</p>
+							
+						</div>
+					</ul>
+				</div>
+			</div>
+		
+		</th>
+	</tr>
+</table>
+</center>
+
+<div class='' style='background:#005073;position:relative;top:30px;height:45px'>
+	<center><p class='head_3' style="padding:10px">I'm looking for work!</p></center>
+</div>
+
+
+</body>
+</html>

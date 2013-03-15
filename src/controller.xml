@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<controller>
+	<package namespace="" name="" class="">
+		<controller name="" method="">
+			<result type="redirect">/url</result>
+		</controller>
+	</package>
+	
+	<include file="struts-default.xml" />
+	<include file="struts-default.xml" />
+	<include file="struts-default.xml" />
+	
+</controller>

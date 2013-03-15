@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+body {padding:0px 0px;margin:0px 0px;background-image:url('../image/bg.png')}
+
+.head_1 {font-weight:bold;font-size:36px}
+.head_2 {font-weight:bold;font-size:28px}
+.head_3 {font-weight:bold;font-size:20px}
+
+.text {font-weight:normal; font-size:16px}
+.textDiv {text-indent:2em;margin:1px 0px 0px 0px;
+	display:none;border:#000 2px solid;
+	border-bottom:#000 5px solid
+}
+
+.shadow {
+	-webkit-box-shadow: #666 0px 0px 20px;
+	-moz-box-shadow: #666 0px 0px 20px;
+		 box-shadow: #666 0px 0px 20px;
+}
+
+.gap20 {position:relative;top:20px}
+.gap40 {position:relative;top:40px}
+
+.gray {height:50px; background-color:#3a3a3a;}
+.black {height:50px; background-color:#000}
+.blue {height:50; background:#005073}
+
+.pointer {cursor:pointer}
+
+.transparent {filter:alpha(opacity=80);opacity:0.8;}
+
+li {list-style-type: none;}
+
+.insert {display:none}
+
+.backUp {position:fixed;bottom:50px;right:50px;width:32px;height:32px;background-image:url('../image/arrows-up-black.png')}

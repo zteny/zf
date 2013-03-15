@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">
+	$('.insert .pointer').click(function(){
+		$('.insert').hide('blind','slow');
+		$('#projects').show('bounce','slow')
+	});
+	
+	$('#backToInsertTable img').click(function(){
+		$('#projects').hide('drop','slow');
+		$('.insert').show('fade','slow');
+	});
+	$('#backToMainTable img').click(function(){
+		$('.insert').hide();
+		$('#mainTable').show('fade','slow');
+	});
+</script>
+
+</head>
+<body>
+<center>
+<table class="insert">
+	<tr>
+		<th valign="top"> <div id="backToMainTable" style="margin:50px 20px 0px 0px"><img src="resource/image/arrows-left-black.png"/></div> 
+		</th>
+		<th align="left" valign="top" height="650px">
+			<div class="shadow" style="width:700px;height:800px;background:#fff;padding:20px 0px">
+				<ul>
+					<li class=''>
+						<div class="gray shadow" style="color:#FFF;width:95%;">
+							<p class="head_2" style="color:#FFF;padding:7px">我能独立完成模块开发  
+								<span class="text">Take charge of a department alone!</span></p>
+						</div>
+						<div class="gray text shadow" style="margin:1px 0px;color:#FFF;width:95%;height:100%;padding:5px 0px 10px 0px;text-indent:2em">
+							<p style="margin:15px">在佛山教育资料库子系统的开发过程中，文档共享、文档线上阅读、互答模块、全文检索模块，以及工具类的设计及实现。</p>
+							<p style="margin:15px">	1.	文档线上阅读模块，主要业务是定时（或管理实时操作）转化格式（将任一格式的文档转化成pdf，再将pdf转成swf格式的文件在FlexPaper显示），同时生成Lucene索引，以备Lucene检索使用。这个过程使用了多个开源组件和开源工具。</p>
+							<p style="margin:15px">	2.	互答模块，主要业务是对回题和答案的管理，定时结果关闭未解决问题。我们使用了Oracle Job任务调节器完成。</p>
+							<p style="margin:15px">	3.	与其它子系统交互（IM应用），主要业务是要与IM工具实现IM功能及我方文档及用户需要同步到IM上。用到的是Apache commons net相关组件。</p>
+						</div>
+					</li>
+					<li class=''>
+						<div class="gray shadow" style="color:#FFF;width:95%;">
+							<p class="head_2" style="color:#FFF;padding:7px">我有很强的学习能力
+								<span class="text"> I don’t know but I will learn it soon!</span></p>
+						</div>
+						<div class="gray text shadow" style="margin:1px 0px;color:#FFF;width:95%;height:100%;padding:5px 0px 10px 0px;text-indent:2em">
+							<p style="margin:15px">每个项目或多或少都会用第三方开源组件，不见得每个组件都是我们用过的，所以学习能力显得犹为重要。我有拥有很强的学习能力，也培养了这种学习开源组件、开源框架的能力。</p>
+							<p style="margin:15px">	1. 技术永远学不完，但我能快递掌握它，并用到项目中。</p>
+							<p style="margin:15px">	2. 一般的开源组件或框架，基本几小钟就能写出Demo，甚至是深入的了解。</p>
+							<p style="margin:15px">	3. 因此，拓宽了我的视野，更是掌握学习这些框架和组件技巧。</p>
+						</div>
+					</li>
+					<li class=''>
+						<div class="gray shadow" style="color:#FFF;width:95%;">
+							<p class="head_2" style="color:#FFF;padding:7px">开发环境  
+								<span class="text"> Eclipse/MyEclipse Tomcat/Jetty</span></p>
+						</div>
+					</li>
+					<li class='pointer'>
+						<div class="gray shadow" style="color:#FFF;width:95%;">
+							<img src="resource/image/arrows-right.png" style="padding:1px 2px;float:left"/>
+							<p class="head_2" style="color:#FFF;padding:7px">项目描述    
+								<span class="text"> I think I can do it</span></p>
+							
+						</div>
+					</li>
+				</ul>
+			</div>
+		</th>
+	</tr>
+</table>
+<table id="projects" style="display:none">
+	<tr>
+		<th valign="top">
+			<div id="backToInsertTable" style="margin:50px 20px 0px 0px"><img src="resource/image/arrows-left-black.png"/></div>
+		</th>
+		<th valign="top">
+			<div class="shadow" style="width:660px;height:640px;border:#fff 1px solid;text-indent:2em;padding:10px 20px" align='left'>
+				<p class="head_2" style="text-indent:0em">A.在佛山教育资料库子系统</p>
+				<p>	资料库平台是一个以知识分享和文档共享为基础，建立起来的教育行业专业的知识管理平台。包括知识分享、文档共享、档案管理、文档写作等主要功能，采用开放的知识问答机制，集思广益，汇聚各个方面的专业知识，形成共同认可的知识项或者知识主题，所有用户可以通过平台，方便的搜索和定位到所关注的共享知识内容。</p> 
+				<p>	资料库平台主要包括两个子平台：资料库门户平台、资料库后台管理平台。 </p>
+				<p>	资料库门户平台主要是提供知识以及共享文件的展示和查看、回答或评论、关键字搜索、分类检索、全文检查、热门推荐、信息通知、问题排行，文档线上阅读、知识收藏与共享等功能。</p> 
+				<p>	资料库后台管理平台提供了针对知识管理平台内各种功能和权限的管理，包括：知识库分类管理、档案查看与管理、问题及文档的审核和管理、帐号权限管理；</p> 
+				<p>	栏目管理员由系统管理员指定，负责一个或多个知识栏目，对内容进行审核和管理。 </p>
+				<p>	主题管理员由系统管理员指定，负责相关知识栏目下建立知识主题，批量添加知识内容和文档资料，普通用户只能浏览主题内的资源，不能做评论和回复。</p>
+				<p class="head_2" style="text-indent:0em">B. 佛山教育优课网子系统</p>
+				<p> 建设流媒体点播与直播系统，支撑佛山市教育信息化相关业务系统，提供流媒体点播直播服务支撑，满足大用户量并发的流媒体点播直播服务。以减少流媒体播放时的带宽使用为目标，确保在高并发的请求下能够提供快速、高质量的流媒体响应。开发建设管理平台，对流媒体系统的所有资源能够进行有效管理和配置。通过流媒体点播与直播系统的应用接口，为其他业务系统提供实时的、非实时的学习环境，并采用安全策略保障教育教学资源的安全可靠。</p>
+			</div>
+		</th>
+	</tr>
+</table>
+</center>
+</body>
+</html>
