@@ -25,6 +25,8 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(getServletContext().getRealPath("/"));
+		System.out.println("dsf" + request.getServletPath() + "\n" + request.getServerName() + "\n" + request.getRequestURI());
+		
 	}
 
 	/**
