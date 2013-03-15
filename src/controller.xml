@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <controller>
-	<package namespace="" name="" class="">
-		<controller name="" method="">
+	<package namespace="test">
+		<controller name="testAction" method="execute" class="test">
 			<result type="redirect">/url</result>
 		</controller>
 	</package>
 	
-	<include file="struts-default.xml" />
-	<include file="struts-default.xml" />
-	<include file="struts-default.xml" />
+	<include file="/controller/user.xml" />
 	
 </controller>

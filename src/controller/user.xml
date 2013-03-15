@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<controller>
+	<package namespace="user" >
+		<controller name="userAction" method="execute" class="java.lang.String">
+		</controller>
+	</package>
+</controller>

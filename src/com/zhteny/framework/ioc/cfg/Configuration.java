@@ -1,8 +1,11 @@
 package com.zhteny.framework.ioc.cfg;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -20,32 +23,39 @@ public class Configuration {
 		SAXReader saxReader = new SAXReader();
 		try {
 			Document document = saxReader.read(this.getClass().getResourceAsStream("/controller.xml"));
-			List<Element> list = document.selectNodes("//controller/include");
-			List<Element> pack = document.selectNodes("//controller/package");
+			List<Element> files = document.selectNodes("//controller/include");
+			List<Element> packs = document.selectNodes("//controller/package");
 			
-			for(Element e : list){
+			for(Element e : files){
+				Set<String> fileName = new HashSet<String>();
+				fileName.add(e.attributeValue("file"));
 				System.out.println(e.attributeValue("file"));
-			}
-			
-			for(Element e : pack){
 				
+				Document doc = saxReader.read(this.getClass().getResourceAsStream(e.attributeValue("file")));
+				packs.addAll(doc.selectNodes("//package"));
 			}
 			
+			pkgConfig = getPackageConfig(packs);
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	protected List<Element> getPackageConfig(List<Element> fileList){
-		return new ArrayList();
+	protected Map<String, PackageConfig> getPackageConfig(List<Element> packageConfigs){
+		Map<String, PackageConfig> pkgConfig = new HashMap();
+		
+		for(Element pack : packageConfigs){
+			pkgConfig.put(pack.attributeValue("namespace"), 
+					new PackageConfig(pack.attributeValue("namespace"),
+							pack.selectNodes("controller"))
+			);
+		}
+		System.out.println(pkgConfig.size());
+		return pkgConfig;
 	}
 	
-	protected List<ControllerConfig> getControllerConfig(List<Element> packageConfig){
-		return new ArrayList();
+	private Map<String, PackageConfig> getPackageConfig(){
+		return this.pkgConfig;
 	}
 	
-	public static void main(String[] args){
-		Configuration cfg = new Configuration();
-		cfg.init();
-	}
 }
